@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration  xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+  <appender name="CONSOLE-LOG" class="org.apache.log4j.ConsoleAppender">
+    <param name="target" value="System.out"/>
+    <layout class="org.apache.log4j.SimpleLayout"/>
+  </appender>
+  
+  <appender name="EVENT-LOG" class="org.apache.log4j.FileAppender">
+        <param name="File" value="event.html"/>
+        <param name="Encoding" value="utf-8"/>
+        <param name="Append" value="false"/>
+        <layout class="org.apache.log4j.HTMLLayout"/>
+  </appender>
+
+  <root>
+    <appender-ref ref="CONSOLE-LOG"/>
+    <appender-ref ref="EVENT-LOG"/>
+  </root>
+
+</log4j:configuration>
